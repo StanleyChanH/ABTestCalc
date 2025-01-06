@@ -5,7 +5,7 @@ import scipy.stats as stats
 
 # 语言资源
 LANGUAGES = {
-    'zh': {
+    '中文': {
         'title': 'AB测试样本数计算器',
         'baseline': '目标转化率基线 (0-1):',
         'effect': '最小可检测效果（判断实验有效性的最小变化）(%):',
@@ -21,7 +21,7 @@ LANGUAGES = {
             'alpha': '[默认]显著性水平必须在0到1之间。'
         }
     },
-    'en': {
+    'English': {
         'title': 'AB Test Sample Size Calculator',
         'baseline': 'Baseline Conversion Rate (0-1):',
         'effect': 'Minimum Detectable Effect (%):',
@@ -39,7 +39,7 @@ LANGUAGES = {
     }
 }
 
-current_lang = 'zh'  # 默认语言
+current_lang = '中文'  # 默认语言
 
 def change_language(lang):
     global current_lang
@@ -131,7 +131,7 @@ language_frame.pack(fill=tk.X, pady=5)
 language_var = tk.StringVar(value=current_lang)
 language_menu = ttk.Combobox(language_frame, 
                             textvariable=language_var, 
-                            values=['zh', 'en'],
+                            values=['中文', 'English'],
                             state='readonly')
 language_menu.bind('<<ComboboxSelected>>', lambda e: change_language(language_var.get()))
 language_menu.pack(side=tk.RIGHT)
